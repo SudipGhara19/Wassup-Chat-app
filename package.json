@@ -1,0 +1,15 @@
+{
+  "name": "wassup-chat-app",
+  "version": "1.0.0",
+  "description": "It is a basic chatting app created with Express.js, Node.js, HTML, Javascript, CSS, Socket.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "Sudip Ghara",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
