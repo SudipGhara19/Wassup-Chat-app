@@ -29,4 +29,8 @@ const io = new Server(server);
 
 io.on('connection', (socket) => {
  console.log("Connected...");
+// broadcasting the msg to other user except the sender
+ socket.on('message', (msg) => {
+    socket.broadcast.emit('message', msg)
+})
 })

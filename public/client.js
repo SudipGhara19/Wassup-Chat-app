@@ -20,10 +20,16 @@ textarea.addEventListener('keyup', (e) => {
 function sendMessage(msgText){
     const msg = {
         user: userName,
-        message: msgText
+        message: msgText.trim()
     };
 
+    // Append messege
     appendMessage(msg, 'outgoing');
+
+    textarea.value = '';
+
+    // send to Server
+    socket.emit('message', msg);
 }
 
 // appending the message
@@ -41,3 +47,9 @@ function appendMessage(msg, type){
  mainDiv.innerHTML = markup;
  messageArea.append(mainDiv);
 }
+
+
+// Receving the message send by another client
+socket.on('message', (msg) => {
+ appendMessage(msg, 'incoming');
+})
